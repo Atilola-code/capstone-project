@@ -1,6 +1,8 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import { RiStarSFill } from "react-icons/ri";
+import About from '../about/page';
 
 
 
@@ -9,14 +11,14 @@ export default function LandingPage() {
     
     <div>
 
-    <div className="flex flex-col justify-between h-screen bg-[#e4cee7] px-8">
+    <div className="flex flex-col justify-between h-screen bg-white px-8">
       <div className="flex flex-row justify-between md:col-span-1 mt-10 md:mt-6">
         <div className='mt-40 '>
         <h1 className='font-bold text-4xl text-black'>GLOW BRIGHTER, <br />RADIATE CONFIDENCE</h1>
         <p className='text-xl font-sans font-normal'>Elevate your skincare routine </p>
         <p className='text-xl font-sans font-normal'>with clinically-effective formulas  </p>
           <p className='text-xl font-sans font-normal'>designed to restore balance and glow</p>
-          <p className='text-xl font-sans font-normal'><em>Your best skin is just a routine away</em></p>
+          <p className='text-xl font-sans font-normal display sm:hidden'><em>Your best skin is just a routine away</em></p>
           <button className='flex items-center justify-between px-14 py-6 bg-[#A082DA] text-white rounded-3xl mt-10'>Shop Now</button>
         </div>
       <div>
@@ -38,11 +40,11 @@ export default function LandingPage() {
           <h2 className='text-5xl'>6M+</h2>
       </div>
        
-      <div className=' mt-20 '>
+      <div className=' mt-20  '>
         <h2 className=' font-semibold text-4xl'>Most Popular</h2>
       </div>
       <div>
-      <div className=' grid sm:grid-cols-3 md:grid-cols-5 justify-between mt-10 gap-6 items-center '>
+      <div className=' grid sm:grid-cols-2 md:grid-cols-5 justify-between mt-10 gap-6 items-center '>
         <div className=' bg-slate-100 rounded-2xl py-8 px-8 shadow-2xl'>
         <Image src={"https://www.bareminerals.co.uk/cdn/shop/files/BM_SP24_SkinRescue_Silo_Closed_PureSmooth_3000x3000_R150.png?v=1742326240"} alt='first-product' width={'200'} height={'200'} />
         <p className='flex justify-center items-center mt-6 '>Bare mineral skin rescue</p>
@@ -76,7 +78,7 @@ export default function LandingPage() {
         <div className=' bg-slate-100 rounded-2xl py-8 px-8 shadow-2xl'>
         <Image src={"https://www.repechage.com/cdn/shop/files/Red-Out_Soothing_Moisturizer_Bottle.png?v=1733869728&width=1080"} alt='fourth-product' width={'200'} height={'200'}/>
         <p className='flex justify-center items-center mt-6'>REPECHAGE</p>
-        <p className='flex justify-center items-center '>Soothing moisturizer - 120ml</p>
+        <p className='flex justify-center items-center '>Moisturizer - 120ml</p>
         <p className='flex justify-center items-center '>Price: NGN 10,000</p>
         </div>
         <div className=' bg-slate-100 rounded-2xl py-8 px-8 shadow-2xl'>
@@ -106,24 +108,29 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div className="flex flex-row justify-between md:col-span-1 mt-10 md:mt-16">
+      <div className="flex flex-col justify-between mt-10 sm:mt-10">
+        <div className='grid grid-cols-2 mt-10 justify-items-center'>
       <div>
-        <h2 className='text-center text-3xl font-semibold mt-60'>Best skincare products for all skin type</h2>
+        <Image src={"/Second-image.png"} alt="skincare product" title='Quality skincare' width={'600'} height={'200'} className="px-8 py-10 bg-slate-200 rounded-[70px] "/>
+      </div>
+      <div className='mt-40'>
+        <h2 className='text-center text-3xl font-semibold mt-16'>Best skincare products for all skin type</h2>
         <p className='text-center text-xl font-sans font-normal'>We've created a collection of thoughtfully crafted skincare essentials</p>
         <p className='text-center text-xl font-sans font-normal'>made for every complexion, every texture, and every tone.</p>
-        <p className='text-center text-xl font-sans font-normal'>Experience the transformative power of our skincare product</p>
-        <p className='text-center text-xl font-sans font-normal'>and unlock your skin's true potential.</p>
-        <p className='text-center text-xl font-sans font-normal'>Skincare isn't one-size-fits-all. It's personal and we're here for every kind</p>
+        <p className='text-center text-xl font-sans font-normal '>Experience the transformative power of our skincare product</p>
+        <p className='text-center text-xl font-sans font-normal '>and unlock your skin's true potential.</p>
+        <p className='text-center text-xl font-sans font-normal '>Skincare isn't one-size-fits-all. It's personal and we're here for every kind</p>
         <button className='flex items-center justify-center px-14 py-6 bg-[#A082DA] ml-50 text-white rounded-3xl mt-8'>Shop Now</button>
       </div>
-      <div>
-        <Image src={"/Second-image.png"} alt="skincare product" title='Quality skincare' width={'600'} height={'200'} className="px-8 py-10 bg-slate-200 rounded-[70px] my-[20px]"/>
+        </div>
       </div>
-      </div>
+      
 
-      <div>
-        
-      </div>
+      
+
+      
+      
+     
       </div>
       </div>
       

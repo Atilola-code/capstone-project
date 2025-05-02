@@ -1,10 +1,12 @@
 "use client"
-import React, { createContext, useState } from 'react'
+
+import { createContext, useState } from 'react'
 
 
 const SidebarContext = createContext()
 
-const SidebarProviders = ({ children }) => {
+const SidebarProviders = ({children}) => {
+  
 
   const [val, setVal] = useState(0)
   const [addItem, setAddItem] = useState([])

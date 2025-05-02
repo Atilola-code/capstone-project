@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { SidebarContext } from '../providers'
 
 export default function Wishlist() {
@@ -15,9 +15,9 @@ export default function Wishlist() {
            :
            (
             <table className='text-center w-full border-collapse border border-gray-300'>
-                <caption className='text-3xl font-bold text-[#E26E2C] py-4'>Your Wishlist</caption>
+                <caption className='text-3xl font-bold text-black py-4'>Your Wishlist</caption>
                 <thead>
-                    <tr className='bg-[#E26E2C] text-white'>
+                    <tr className='bg-[#B39BE1  ] text-white'>
                         <th className='border border-gray-300'>Title</th>
                         <th className='border border-gray-300'>Price</th>
                         <th className='border border-gray-300'>Description</th>
@@ -29,7 +29,7 @@ export default function Wishlist() {
                         <tr key={index} className='border border-gray-300'>
                             <td className='text-center text-xl font-bold'>{item.title}</td>
                             <td className='text-center text-xl font-bold'>{item.price}</td>
-                            <td className='text-center text-xl font-bold'>{item.description}</td>
+                            <td className='text-center text-xl font-bold'>{item.desc}</td>
                         </tr>
                     ))}
                 </tbody>

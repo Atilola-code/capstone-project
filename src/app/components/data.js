@@ -1,4 +1,4 @@
-const skincareProducts = [
+export const skincareProducts = [
     {
       id: 1,
       title: "HydraGlow Moisturizer",
@@ -115,7 +115,7 @@ const skincareProducts = [
       description: "Targeted serum for fine lines and under-eye darkness. Enriched with peptides, vitamin K, and hyaluronic acid for visible rejuvenation.",
       price: 30000,
       category: "Eye Care",
-      image: "https://cdn.salla.sa/nGgdb/FR1YMNOFB2N7yH8gG4UA3YCkdwIevUU5vCUm09Qq.jpg",
+      image: "https://www.navonnaturals.com/cdn/shop/products/Untitled_design_3.png?v=1675425093",
       rating: 4.6,
       ratingStars: "★★★★☆"
     },

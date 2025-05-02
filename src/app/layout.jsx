@@ -2,6 +2,9 @@ import {  Playfair_Display, Poppins } from "next/font/google"
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import { SidebarProviders } from "./providers";
+import LandingPage from "./components/LandingPage";
+import FaqSection from "./FAQs/page";
+import About from "./about/page";
 
 
 const pop = Poppins({
@@ -22,13 +25,15 @@ const play= Playfair_Display({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${pop.className} ${play.className}`}>
+      <body className={`${pop.className} ${play.className} min-h-screen`}>
           <SidebarProviders>
-
         <Navbar />
+        {/* <LandingPage/> */}
+        {/* <About/> */}
+        {/* <FaqSection/> */}
         {children}
           </SidebarProviders>
       </body>
     </html>
-  );
+  )
 }

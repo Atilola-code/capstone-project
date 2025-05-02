@@ -17,20 +17,20 @@ export default function NavBar() {
   return (
         <>
         <div>
-    <nav className='bg-[#A082DA]/80 shadow-2xl py-8'>
-            <ul className='mx-auto flex flex-row items-center justify-between font-medium px-4 md:flex-row md:px-2 gap-x-4 text-white relative'>
+    <nav className='bg-[#dbcbfcc5] shadow-2xl py-8'>
+            <ul className='mx-auto flex flex-row items-center justify-between font-medium px-4 md:flex-row md:px-2 gap-x-4 text-[#5106e6c5] relative'>
             <li className='text-[#5106e6c5] font-extrabold text-2xl shadow-2xl'>Careglow</li>
                     <li onClick={() => {setMenu('/')}}>
                     <Link href='/'>Home {menu=== '/' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] rounded-md'/>:<></>}</Link>
                     </li>
-                    <li onClick={() => {setMenu('#about')}}>
-                    <Link href='#about'>About {menu=== '#about' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] rounded-md'/>:<></>}</Link>
+                    <li onClick={() => {setMenu('/about')}}>
+                    <Link href='/about'>About {menu=== '/about' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] rounded-md'/>:<></>}</Link>
                     </li>
-                    <li onClick={() => {setMenu('#FAQs')}}>
-                    <Link href='#FAQs'>FAQs {menu=== '#FAQs' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] rounded-md'/>:<></>}</Link>
+                    <li onClick={() => {setMenu('/FAQs')}}>
+                    <Link href='/FAQs'>FAQs {menu=== '/FAQs' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] rounded-md'/>:<></>}</Link>
                     </li>
-                    <li onClick={() => {setMenu('#contact')}}>
-                    <Link href="#contact">Contact {menu=== '#contact' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] rounded-md'/>:<></>}</Link>
+                    <li onClick={() => {setMenu('/contact')}}>
+                    <Link href="/contact">Contact {menu=== '/contact' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] rounded-md'/>:<></>}</Link>
                     </li>
                     <li onClick={() => {setMenu('/products')}}>
                         <Link href='/products'>Products {menu=== '/products' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] rounded-md'/>:<></>}</Link>
@@ -44,10 +44,10 @@ export default function NavBar() {
                         <Link href='/login'>Log In</Link></li>
                 </div>
                 <div className='flex flex-row items-center justify-end gap-4'>
-                <GrCart className='p-2 text-white size-10 cursor-pointer'/>
+                <GrCart className='p-2 text-[#5106e6c5] size-10 cursor-pointer'/>
                 <div className='w-[23px] h-[23px] flex justify-center items-center mt-[-35] ml-[-55] rounded-[12px] bg-[#5910ecaf] text-white size[14px]'>{val}</div>
-                <GrFavorite className='p-2 text-white size-10 cursor-pointer' />
-                <FaRegUser className='p-2 text-white size-10 cursor-pointer' onClick={handleUser}/>
+                <GrFavorite className='p-2 text-[#5106e6c5] size-10 cursor-pointer' />
+                <FaRegUser className='p-2 text-[#5106e6c5] size-10 cursor-pointer' onClick={handleUser}/>
                 </div>
 
             </ul>
