@@ -5,6 +5,7 @@ import { SidebarProviders } from "./providers";
 import LandingPage from "./components/LandingPage";
 import FaqSection from "./FAQs/page";
 import About from "./about/page";
+import MainNav from "./components/MainNav";
 
 
 const pop = Poppins({
@@ -27,7 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${pop.className} ${play.className} min-h-screen`}>
           <SidebarProviders>
-        <Navbar />
+        <MainNav />
         {/* <LandingPage/> */}
         {/* <About/> */}
         {/* <FaqSection/> */}
