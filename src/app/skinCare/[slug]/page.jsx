@@ -8,18 +8,20 @@ import React, { useContext, useState } from 'react'
 
 export default function ProductInfo() {
   const params = useParams()
-  const id = params.id
-    const {setVal, addItem, setAddItem} = useContext(SidebarContext)
-    const [put, setPut] = useState('Favourite')
+  const slug = params.slug
+    const {setVal, addItem, setAddItem, addItemCart, setAddItemCart} = useContext(SidebarContext)
+    const [put, setPut] = useState('Favorite')
 
-    function handleIncrement() {
-        setVal(prev => prev + 1)
-    }
-    function handleFavIncrement() {
-        setVal(prev => prev + 1)
-    }
-    const careDetails = skincareProducts.find(skinCare => skinCare.title.replaceAll(' ','-') == id)
+
+    // function handleFavIncrement() {
+    //   setVal(prev => prev + 1)
+    // }
+    const careDetails = skincareProducts.find(skinCare => skinCare.title.replaceAll(' ','-') == slug)
     
+    function handleAddItemCart(){
+      setVal(prev => prev + 1)
+      setAddItemCart([...addItemCart, {title: careDetails.title, count: val, amount: val * careDetails.price}])
+    }
 
     function handleItemFav(){
       setAddItem([...addItem, {title:careDetails.title, price:careDetails.price, desc:careDetails.description, image:careDetails.image}])
@@ -28,45 +30,32 @@ export default function ProductInfo() {
     }
   return (
     <>
-    <div className=' px-16'>
-      <Image src={careDetails.image} alt={careDetails.title} width={'300'} height={'300'} className='rounded-3xl border-none hover:scale-105 '/>
-
-      <section className='flex flex-col items-center justify-center shadow-2xl rounded-md bg-slate-800 border-[#B39BE1] py-8 px-6'>
-        <h2>Description</h2>
+    <div className='px-4 py-8 flex flex-col items-center justify-center h-screen m-auto'>
+      <Image src={careDetails.image} alt={careDetails.title} width={'400'} height={'400'} className='rounded-3xl border-none '/>
+      <section className='flex flex-col items-center justify-center max-w-lg  mt-6'>
         <ul>
-        {careDetails.description.map((skinCare, index) => (
-            <li className='flex items-center px-6 py-8' key={index}>
-            <span>{skinCare}</span>
-            </li>
-        ))}
+        <span className='break-words font-normal font-serif leading-relaxed'><span className='text-lg font-semibold'>Description:</span> {careDetails.description}</span>
         </ul>
       </section>
-      <section className='flex flex-col items-center justify-center shadow-2xl rounded-md bg-amber-500 py-8 px-6'>
-        <h2>Ratings</h2>
+      <section className='mr-[350px]'>
         <ul>
-            <span>{careDetails.ratingStars}</span>
+            <span className='font-serif text-xl  text-amber-500'><span className='text-black text-lg font-semibold'>Ratings: </span>{careDetails.ratingStars}</span>
         </ul>
       </section>
-      <section>
-        <h2>category</h2>
+      <section className='mr-[333px]'>
         <ul>
-            {careDetails.category.map((skinCare, index) => (
-            <li className='flex items-center px-6' key={index}>
-            <span>{skinCare}</span>
-            </li>
-        ))}
+            <span className='font-normal font-serif'><span className='font-semibold text-lg'>Category:</span> {careDetails.category}</span>
         </ul>
       </section>
-      <section>
-        <h2>Price</h2>
+      <section className='mr-[390px]'>
         <ul>
-            <span>Price: ₦{careDetails.price.toLocaleString()}</span>
+        <span className='font-normal font-serif'><span className='font-semibold text-lg'>Price: </span>₦{careDetails.price.toLocaleString()}</span>
         </ul>
       </section>
     </div>
-    <div className='flex gap-4 items-center justify-center shadow-2xl rounded-md bg-slate-800 py-8 px-6'>
-    <button className='bg-[#E26E2C] text-white p-4 cursor-pointer rounded-4xl inline-block mx-4 px-8' onClick={handleIncrement}>Add cart</button>
-    <button className='bg-[#E26E2C] text-white p-4 cursor-pointer rounded-4xl inline-block mx-4 px-8' onClick={handleFavIncrement}>Favourite</button>
+    <div className='flex gap-4 items-center justify-center mt-[-32px] mb-6'>
+    <button className='bg-[#5106e6c5] text-white p-4 cursor-pointer rounded-4xl inline-block mx-4 px-8' onClick={handleAddItemCart}>Add cart</button>
+    {/* <button className='bg-[#5106e6c5] text-white p-4 cursor-pointer rounded-4xl inline-block mx-4 px-8' onClick={handleFavIncrement}>Favorite</button> */}
     <Button put={put} add={handleItemFav}/>
     </div>
     </>

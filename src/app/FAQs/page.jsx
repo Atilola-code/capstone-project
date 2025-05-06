@@ -37,8 +37,8 @@ export default function FaqSection() {
 
   return (
     <div>
-      <div className='max-w-3xl mx-auto mt-[80px] sm:mt-[40px] py-16 px-4'>
-      <h2 className='text-3xl sm:text-2xl font-bold sm:font-semibold font-sans text-center mb-8 text-black px-6 py-10 sm:px-4 sm:py-8 rounded-2xl bg-purple-100'>FAQs</h2>
+      <div className='max-w-3xl mx-auto lg:mt-[80px] mt-[40px] py-16 px-4'>
+      <h2 className='lg:text-3xl text-2xl lg:font-bold font-semibold text-center mb-8 text-black lg:px-6 lg:py-10 px-4 py-8 rounded-2xl bg-purple-100'>FAQs</h2>
       {faqs.map((faq, index) => (
         <div
           key={index}
@@ -46,13 +46,13 @@ export default function FaqSection() {
         >
           <button
             onClick={() => toggleFaq(index)}
-            className='flex justify-between w-full text-left text-blue text-lg font-medium focus:outline-none'
+            className='flex justify-between w-full text-left text-black lg:text-xl text-lg font-medium focus:outline-none'
           >
             {faq.question}
             <span>{openIndex === index ? <IoIosArrowDown /> : <IoIosArrowUp />}</span>
           </button>
           {openIndex === index && (
-            <p className='mt-2 sm:mt-4 text-black/70 text-base'>{faq.answer}</p>
+            <p className='lg:mt-2 mt-4 text-black/70 text-base'>{faq.answer}</p>
           )}
         </div>
       ))}
