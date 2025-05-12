@@ -4,7 +4,7 @@ import React from 'react'
 export default function About() {
   return (
     <div className='lg:mt-8 mt-28'>
-      <div className="h-screen text-slate-100 lg:py-16 lg:px-8  ">
+      <div className="min-h-screen text-slate-100 lg:py-16 lg:px-8  ">
       <div className="">
         <div className="text-center mb-12 font-normal font-sans ">
           <div className='grid grid-cols-2 justify-items-center'>
