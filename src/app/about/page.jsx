@@ -3,12 +3,12 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className='lg:mt-[1850px] mt-[2100px]'>
-      <div className="min-h-screen text-slate-100 lg:py-16 lg:px-8  ">
+    <div className='lg:mt-8 mt-28'>
+      <div className="h-screen text-slate-100 lg:py-16 lg:px-8  ">
       <div className="">
         <div className="text-center mb-12 font-normal font-sans ">
           <div className='grid grid-cols-2 justify-items-center'>
-          <div className='text-lg lg:mt-30 mt-68 text-slate-900'>
+          <div className='text-lg lg:mt-30 mt-48 text-slate-900'>
           <h1 className="lg:text-3xl text-2xl font-semibold text-black mt-10 lg:px-4 lg:py-8 px-2 py-6 shadow-2xl rounded-2xl sm:mr-4 bg-purple-300">About Me</h1>
           <p className="mt-8 lg:text-lg text-xs sm:mr-4"> Hi, I'm Sanni Mistura Ayinke, the creator behind this skincare ecommerce website. I am a young vibrant developer who enjoys developing creative ideas into clean, functional</p>
           <p className='lg:text-lg text-xs sm:mr-4'>and visually appealing web experiences, with a strong eye for details and a love for modern, intuitive interfaces.</p>

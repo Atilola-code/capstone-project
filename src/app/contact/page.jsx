@@ -48,9 +48,11 @@ const ContactForm = () => {
   });
 
   return (
-   <form onSubmit={formik.handleSubmit} className="max-w-md bg-[#dbcbfcc5] shadow-2xl mt-14  rounded-md m-auto p-4 space-y-4">
+    <div>
+    <h2 className='mt-16 px-6 py-10 bg-[#5106e6c5]/80 max-w-2xl text-center m-auto shadow-2xl flex justify-center items-center rounded-2xl text-white text-2xl'>Contact Info</h2>
+   <form onSubmit={formik.handleSubmit} className="max-w-2xl bg-[#dbcbfcc5] shadow-2xl mt-8  rounded-md m-auto py-8 px-16 space-y-4">
       <div>
-        <label className="block text-[#5106e6c5] text-sm mt-8 font-medium mb-1">Name</label>
+        <label className="block text-[#5106e6c5] text-lg mt-8 font-medium mb-1">Name</label>
         <input
           name="name"
           type="text"
@@ -65,7 +67,7 @@ const ContactForm = () => {
       </div>
 
       <div>
-        <label className="block text-[#5106e6c5] text-sm font-medium mb-1">Email</label>
+        <label className="block text-[#5106e6c5] text-lg font-medium mb-1">Email</label>
         <input
           name="email"
           type="email"
@@ -73,14 +75,14 @@ const ContactForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.email}
           className="w-full border text-[#5106e6c5] p-2 rounded"
-        />
+          />
         {formik.touched.email && formik.errors.email && (
           <div className="text-red-500 text-sm">{formik.errors.email}</div>
         )}
       </div>
 
       <div>
-        <label className="block text-sm text-[#5106e6c5] font-medium mb-4">Message</label>
+        <label className="block text-lg text-[#5106e6c5] font-medium mb-4">Message</label>
         <textarea
           name="message"
           rows="4"
@@ -98,10 +100,11 @@ const ContactForm = () => {
         type="submit"
         disabled={formik.isSubmitting}
         className="bg-[#5106e6c5] text-white  px-4 py-2 mb-8 rounded mr-28 border-2 hover:bg-neutral-100 hover:text-[#5106e6c5] cursor-pointer shadow-2xl"
-      >
+        >
         {formik.isSubmitting ? "Sending..." : "Send Message"}
       </button>
     </form>
+        </div>
   )
 }
 

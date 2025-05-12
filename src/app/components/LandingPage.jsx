@@ -11,7 +11,7 @@ export default function LandingPage() {
     
     <div>
 
-    <div className="flex flex-col justify-between h-screen bg-white px-4 lg:px-8">
+    <div className="flex flex-col justify-between min-h-screen bg-white px-4 lg:px-8">
       <div className="flex flex-row justify-between md:col-span-1 mt-10 md:mt-6">
         <div className='mt-10 lg:mt-40'>
         <h1 className='font-bold text-xl lg:text-4xl text-black'>GLOW BRIGHTER, <br />RADIATE CONFIDENCE</h1>

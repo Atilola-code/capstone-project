@@ -37,7 +37,7 @@ export default function FaqSection() {
 
   return (
     <div>
-      <div className='max-w-3xl shadow-2xl mx-auto lg:mt-[80px] mt-[40px] py-16 px-4'>
+      <div className='max-w-3xl shadow-2xl mx-auto lg:mt-24 mt-[40px] py-16 px-4'>
       <h2 className='lg:text-3xl text-2xl lg:font-bold font-semibold text-center mb-8 text-black lg:px-6 lg:py-10 px-4 py-8 rounded-2xl shadow-2xl bg-purple-100'>FAQs</h2>
       {faqs.map((faq, index) => (
         <div
