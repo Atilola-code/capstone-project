@@ -3,9 +3,11 @@ import "./globals.css";
 import Navbar from "./components/NavBar";
 import { SidebarProviders } from "./providers";
 import LandingPage from "./components/LandingPage";
-import FaqSection from "./FAQs/page";
-import About from "./about/page";
-import MainNav from "./components/MainNav";
+import FaqSection from "./FAQs/page"
+import About from "./about/page"
+import MainNav from "./components/MainNav"
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 const pop = Poppins({
@@ -34,6 +36,15 @@ export default function RootLayout({ children }) {
         {/* <FaqSection/> */}
         {children}
           </SidebarProviders>
+          <ToastContainer 
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+      />
       </body>
     </html>
   )

@@ -19,7 +19,7 @@ export default function LandingPage() {
         <p className='text-xl font-sans font-normal'>with clinically-effective formulas  </p>
           <p className='text-xl font-sans font-normal'>designed to restore balance and glow</p>
           <p className='text-xl font-sans font-normal md:flex hidden'><em>Your best skin is just a routine away</em></p>
-          <button className='flex items-center justify-between px-8 py-4 lg:px-14 lg:py-6 bg-[#A082DA] text-white rounded-3xl mt-8 lg:mt-10'>Shop Now</button>
+          <button className='flex items-center justify-between shadow-2xl px-8 py-4 lg:px-14 lg:py-6 bg-[#A082DA] text-white rounded-2xl mt-8 lg:mt-10'>Shop Now</button>
         </div>
       <div>
         <Image src={"/New-image.png"} alt="skincare product" title='Quality skincare' width={'400'} height={'200'} className="bg-cover lg:mt-2 lg:w-[800px] my-[10px]"/>
@@ -37,14 +37,17 @@ export default function LandingPage() {
           <RiStarSFill  className='text-[#FFD700]'/>
           </span>
         </span>
+        <span>
           <h2 className='lg:text-4xl text-2xl'>6M+</h2>
+          <span className='text-2xl font-semibold font-serif'>Users</span>
+        </span>
       </div>
        
-      <div className=' mt-20  '>
+      <div className=' mt-28  '>
         <h2 className=' font-semibold lg:text-4xl text-2xl'>Most Popular</h2>
       </div>
       <div>
-      <div className=' grid sm:grid-cols-2 lg:grid-cols-5 justify-between mt-10 gap-6 items-center '>
+      <div className=' grid sm:grid-cols-2 lg:grid-cols-5 justify-between mt-6 gap-6 items-center '>
         <div className=' bg-slate-100 rounded-2xl p-8 sm:p-6 shadow-2xl'>
         <Image src={"https://www.bareminerals.co.uk/cdn/shop/files/BM_SP24_SkinRescue_Silo_Closed_PureSmooth_3000x3000_R150.png?v=1742326240"} alt='first-product' width={'200'} height={'200'} />
         <p className='flex justify-center lg:text-lg sm:text-xs items-center mt-6 '>Bare mineral skin rescue</p>
@@ -110,16 +113,16 @@ export default function LandingPage() {
       <div className="flex flex-col justify-between mt-10 sm:mt-14">
         <div className='grid grid-cols-2 mt-10 sm:gap-4 lg:gap-2 justify-items-center'>
       <div>
-        <Image src={"/Second-image.png"} alt="skincare for all" title='Quality skincare' width={'600'} height={'200'} className="px-8 py-10  bg-slate-200 rounded-[70px] "/>
+        <Image src={"/Second-image.png"} alt="skincare for all" title='Quality skincare for all' width={'600'} height={'200'} className="px-8 py-10  bg-slate-200 rounded-[70px] "/>
       </div>
-      <div className='lg:mt-32 mt-8'>
-        <h2 className='text-center lg:text-3xl text-2xl font-bold mt-14 mb-2'>Best skincare products for all skin type</h2>
+      <div className='lg:mt-32 lg:min-w-2xl max-w-lg ml-8 mt-8'>
+        <h2 className='text-center lg:text-4xl text-xl font-semibold mt-14 mb-2'>Best skincare products for all skin type</h2>
         <p className='text-center lg:text-lg text-xs font-sans font-normal'>We've created a collection of thoughtfully crafted skincare essentials</p>
         <p className='text-center lg:text-lg text-xs font-sans font-normal'>made for every complexion, every texture, and every tone.</p>
         <p className='text-center lg:text-lg font-sans md:flex hidden font-normal '>Experience the transformative power of our skincare product</p>
         <p className='text-center lg:text-lg font-sans md:flex hidden font-normal '>and unlock your skin's true potential.</p>
         <p className='text-center lg:text-lg font-sans sm:text-xs font-normal '>Skincare isn't one-size-fits-all. It's personal and we're here for every kind</p>
-        <button className='flex items-center justify-center px-8 py-4 sm:ml-[70px] lg:px-14 lg:py-6 bg-[#A082DA] ml-50 text-white rounded-3xl mt-8'>Shop Now</button>
+        <button className='flex items-center justify-center shadow-2xl px-8 py-4 lg:ml-52 ml-18 lg:px-14 lg:py-6 bg-[#A082DA] mr-10 text-white rounded-2xl mt-8'>Shop Now</button>
       </div>
         </div>
       </div>

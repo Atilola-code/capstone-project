@@ -37,8 +37,8 @@ export default function FaqSection() {
 
   return (
     <div>
-      <div className='max-w-3xl mx-auto lg:mt-[80px] mt-[40px] py-16 px-4'>
-      <h2 className='lg:text-3xl text-2xl lg:font-bold font-semibold text-center mb-8 text-black lg:px-6 lg:py-10 px-4 py-8 rounded-2xl bg-purple-100'>FAQs</h2>
+      <div className='max-w-3xl shadow-2xl mx-auto lg:mt-[80px] mt-[40px] py-16 px-4'>
+      <h2 className='lg:text-3xl text-2xl lg:font-bold font-semibold text-center mb-8 text-black lg:px-6 lg:py-10 px-4 py-8 rounded-2xl shadow-2xl bg-purple-100'>FAQs</h2>
       {faqs.map((faq, index) => (
         <div
           key={index}
@@ -49,7 +49,7 @@ export default function FaqSection() {
             className='flex justify-between w-full text-left text-black lg:text-xl text-lg font-medium focus:outline-none'
           >
             {faq.question}
-            <span>{openIndex === index ? <IoIosArrowDown /> : <IoIosArrowUp />}</span>
+            <span>{openIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown/>}</span>
           </button>
           {openIndex === index && (
             <p className='lg:mt-2 mt-4 text-black/70 text-base'>{faq.answer}</p>

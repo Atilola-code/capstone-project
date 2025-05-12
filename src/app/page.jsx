@@ -2,6 +2,7 @@
 
 import AboutMe from "./about/page";
 import LandingPage from "./components/LandingPage";
+import ContactForm from "./contact/page";
 import FaqSection from "./FAQs/page";
 
 export default function Home() {
@@ -10,6 +11,8 @@ export default function Home() {
       <LandingPage/>
       <AboutMe/>
       <FaqSection/>
+      <ContactForm/>
+      <div className="flex-grow"></div>
      
     </div>
   )

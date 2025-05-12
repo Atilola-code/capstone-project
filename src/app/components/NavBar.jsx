@@ -6,10 +6,10 @@ import { GrFavorite } from "react-icons/gr";
 import React, { useContext, useState } from 'react'
 import { SidebarContext } from '../providers';
 import CartItems from './CartItems';
+import Wishlist from '../wishlist/page';
 
 export default function NavBar() {
-    const {val} = useContext(SidebarContext)
-    const {openCart, setOpenCart} = useContext(SidebarContext)
+    const {val, isVal, openWish, setOpenWish,openCart, setOpenCart} = useContext(SidebarContext)
     const [isOpen, setIsOpen] = useState()
     const [menu, setMenu] = useState('/')
 
@@ -20,11 +20,14 @@ export default function NavBar() {
     function handleCart() {
         setOpenCart(!openCart)
     }
+    function handleWish() {
+        setOpenWish(!openWish)
+    }
   return (
         <>
-        <div>
-    <nav className='bg-[#dbcbfcc5] shadow-2xl py-8 justify-between'>
-            <ul className='m-auto flex flex-row items-center justify-between font-medium px-4 md:px-2 gap-x-4 text-[#5106e6c5] relative'>
+        <div className=''>
+    <nav className='bg-[#dbcbfcc5] shadow-none lg:shadow-2xl lg:py-8 justify-between'>
+            <ul className='m-auto lg:flex hidden flex-row items-center justify-between font-medium px-4 md:px-2 gap-x-4 text-[#5106e6c5] relative'>
             <li className='text-[#5106e6c5] lg:font-extrabold lg:text-2xl shadow-2xl text-xl flex flex-col lg:justify-between items-start font-bold'>Careglow</li>
                     <li onClick={() => {setMenu('/')}}>
                     <Link href='/'>Home {menu=== '/' ? <hr className='border-none w[90%] h-[2px] bg-[#5106e6c5] lg:text-2xl rounded-md'/>:<></>}</Link>
@@ -49,16 +52,18 @@ export default function NavBar() {
                     <li>
                         <Link href='/login'>Log In</Link></li>
                 </div>
-                <div className='flex flex-row items-center  justify-end gap-4'>
-                <GrCart onClick={handleCart} className='p-2 text-[#5106e6c5] size-10 items-end cursor-pointer'/>
-                <div className='w-[20px] h-[22px] flex justify-center items-center mt-[-35] ml-[-55] rounded-full text-xl bg-[#5910ecaf] text-white size[14px]'>{val}</div>
-                <GrFavorite className='p-2 text-[#5106e6c5] size-10 cursor-pointer' />
+                <div className='flex flex-row items-center mr-4 justify-end gap-4'>
+                <GrCart onClick={handleCart} className='p-2 text-[#5106e6c5] size-10 cursor-pointer'/>
+                <div className='w-[20px] h-[22px] flex justify-center items-center mt-[-35] ml-[-55] rounded-full text-lg bg-[#5910ecaf] text-white size-[14px]'>{val}</div>
+                <GrFavorite onClick={handleWish} className='p-2 text-[#5106e6c5] size-10 cursor-pointer' />
+                <div className='w-[20px] h-[22px] flex justify-center items-center mt-[-35] ml-[-55] rounded-full text-lg bg-[#5910ecaf] text-white size-[14px]'>{isVal}</div>
                 <FaRegUser className='p-2 text-[#5106e6c5] size-10 cursor-pointer' onClick={handleUser}/>
                 </div>
-            </ul>
-    </nav>
-        </div>
+                </ul>
+                </nav>
+                </div>
                 {openCart && <CartItems/>}
-        </>
-  )
-}
+                {openWish && <Wishlist/>}
+                </>
+                 )
+                }

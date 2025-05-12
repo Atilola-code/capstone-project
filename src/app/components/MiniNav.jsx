@@ -6,6 +6,7 @@ import { SidebarContext } from '../providers';
 
 export default function MiniNav() {
   const {val} = useContext(SidebarContext)
+  const {isVal} = useContext(SidebarContext)
   return (
     <div>
 
@@ -23,9 +24,10 @@ export default function MiniNav() {
       <li>
         <Link href='/products'>Products</Link>
       </li>
-      <div className='w-[20px] h-[20px] flex justify-center items-center mt-[-10] ml-[-45] rounded-[12px] bg-[#5910ecaf] text-white size[14px]'>{val}</div>
       <GrCart className='p-2 text-[#5106e6c5] size-10 cursor-pointer mt-[-30px]'/>
+      <div className='w-[20px] h-[20px] flex justify-center items-center mt-[-10] ml-[-45] rounded-[12px] bg-[#5910ecaf] text-white size[14px]'>{val}</div>
       <GrFavorite className='p-2 text-[#5106e6c5] size-10 cursor-pointer mt-[-20]' />
+      <div className='w-[20px] h-[20px] flex justify-center items-center mt-[-10] ml-[-45] rounded-[12px] bg-[#5910ecaf] text-white size[14px]'>{isVal}</div>
       
       <li>log in</li>
       <li>sign up</li>

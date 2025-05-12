@@ -5,27 +5,74 @@ import { SidebarContext } from '@/app/providers'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import React, { useContext, useState } from 'react'
+import { toast } from 'react-toastify';
 
 export default function ProductInfo() {
   const params = useParams()
   const slug = params.slug
-    const {setVal, addItem, setAddItem, addItemCart, setAddItemCart} = useContext(SidebarContext)
+    const {setVal, setIsVal, addWishItem, setAddWishItem, addItemCart, setAddItemCart} = useContext(SidebarContext)
     const [put, setPut] = useState('Favorite')
 
 
     // function handleFavIncrement() {
-    //   setVal(prev => prev + 1)
-    // }
-    const careDetails = skincareProducts.find(skinCare => skinCare.title.replaceAll(' ','-') == slug)
-    
-    function handleAddItemCart(){
-      setVal(prev => prev + 1)
-      setAddItemCart([...addItemCart, {title: careDetails.title, count: val, amount: val * careDetails.price}])
-    }
-
-    function handleItemFav(){
-      setAddItem([...addItem, {title:careDetails.title, price:careDetails.price, desc:careDetails.description, image:careDetails.image}])
+      // }
+      const careDetails = skincareProducts.find(skinCare => skinCare.title.replaceAll(' ','-') == slug)
+      
+      function addToCart(){
+        setVal(prev => prev + 1)
+        setAddItemCart(prevItems => {
+        const existingItem = prevItems.find(item => item.id === careDetails.id);
+  
+        if (existingItem) {
+        return prevItems.map(item =>
+          item.id === careDetails.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+          return [
+          ...prevItems,
+      {
+        cartItemId: crypto.randomUUID(),
+        id: careDetails.id,
+        title: careDetails.title,
+        price: careDetails.price,
+        quantity: 1
+      }
+    ];
+  }
+});
+         toast.success(`${careDetails.title} added to cart!`)
+      }
+      
+      
+      function handleItemFav(){
+      setIsVal(prev => prev + 1)
+       setAddWishItem(prevItems => {
+        const existingItem = prevItems.find(item => item.id === careDetails.id);
+  
+        if (existingItem) {
+        return prevItems.map(item =>
+          item.id === careDetails.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+          return [
+          ...prevItems,
+      {
+        cartItemId: crypto.randomUUID(),
+        id: careDetails.id,
+        title: careDetails.title,
+        desc: careDetails.desc,
+        price: careDetails.price,
+        quantity: 1
+      }
+    ];
+  }
+});
       setPut(prev => prev === 'Favorite' ? 'Added' : 'Favorite')
+       toast.success(`${careDetails.title} added to Wishlist!`)
       
     }
   return (
@@ -54,7 +101,7 @@ export default function ProductInfo() {
       </section>
     </div>
     <div className='flex gap-4 items-center justify-center mt-[-32px] mb-6'>
-    <button className='bg-[#5106e6c5] text-white p-4 cursor-pointer rounded-4xl inline-block mx-4 px-8' onClick={handleAddItemCart}>Add cart</button>
+    <button className='bg-[#5106e6c5] text-white p-4 cursor-pointer rounded-2xl inline-block shadow-2xl mx-4 px-8' onClick={() => addToCart()}>Add cart</button>
     {/* <button className='bg-[#5106e6c5] text-white p-4 cursor-pointer rounded-4xl inline-block mx-4 px-8' onClick={handleFavIncrement}>Favorite</button> */}
     <Button put={put} add={handleItemFav}/>
     </div>
